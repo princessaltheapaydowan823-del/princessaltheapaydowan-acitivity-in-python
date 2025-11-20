@@ -1,0 +1,20 @@
+import math
+
+def display_string_info(text):
+    print(f"Upper: {text.upper()}")
+    print(f"Lower: {text.lower()}")
+    print(f"Length of string: {len(text)}")
+    print(f"Reversed string: {''.join(reversed(text))}")
+
+def display_number_info(num):
+    print(f"Square root of number: {math.sqrt(num)}")
+    print(f"Number squared: {pow(num, 2)}")
+    print(f"Ceil value: {math.ceil(num)}")
+    print(f"Floor value: {math.floor(num)}")
+    print(f"Absolute: {abs(num)}")
+
+s = input("Type something: ")
+n = float(input("Type a number: "))
+
+display_string_info(s)
+display_number_info(n)
