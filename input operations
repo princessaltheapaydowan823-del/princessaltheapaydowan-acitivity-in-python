@@ -1,0 +1,17 @@
+import os
+import math
+import statistics
+
+def get_info(prompt):
+    value = input(prompt)
+    return value if value.strip() else "N/A"
+
+print("Welcome to customer info")
+
+customer = {
+    "Name": get_info("Enter your name: "),
+    "Address": get_info("Enter your address: "),
+    "Phone": get_info("Enter your phone number: "),
+    "Email": get_info("Enter your email: "),
+    "Gender": get_info("Enter your gender: "),
+    "Age": get_info("Enter your_
