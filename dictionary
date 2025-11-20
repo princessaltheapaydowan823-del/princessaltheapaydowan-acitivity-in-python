@@ -1,0 +1,59 @@
+import os
+import json
+
+# NEW student data (changed names, ages, codes)
+students = {
+    101: {"fullname": "Ariel Santos", "yearsOld": 18, "studentCode": "25-55001"},
+    102: {"fullname": "Bianca Reyes", "yearsOld": 19, "studentCode": "25-55002"},
+    103: {"fullname": "Carlos Dizon", "yearsOld": 20, "studentCode": "25-55003"},
+    104: {"fullname": "Diana Torres", "yearsOld": 21, "studentCode": "25-55004"},
+    105: {"fullname": "Evan Cruz", "yearsOld": 22, "studentCode": "25-55005"},
+}
+
+def add_student():
+    print("\n--- Add New Student ---")
+    new_id = max(students.keys()) + 1   # auto generate new ID
+
+    data = {
+        "fullname": input("Full Name: "),
+        "yearsOld": input("Age: "),
+        "studentCode": input("Student Code: ")
+    }
+
+    students[new_id] = data
+    print(f"Student '{data['fullname']}' added!\n")
+    os.system("cls" if os.name == "nt" else "clear")
+
+def show_students():
+    print("\n--- Student List ---")
+    for sid, details in students.items():
+        print(f"{sid} -> Name: {details['fullname']}, Age: {details['yearsOld']}, Code: {details['studentCode']}")
+    print()
+
+def save_to_file():
+    with open("students.txt", "w") as file:
+        json.dump(students, file, indent=4)
+    print("\nStudent data successfully saved to students.txt\n")
+
+def menu():
+    print("====== STUDENT SYSTEM MENU ======")
+    print("1 • Add Student")
+    print("2 • Show Students")
+    print("3 • Save Data")
+    print("4 • Exit")
+
+while True:
+    menu()
+    choice = input("Choose an option (1-4): ")
+
+    if choice == "1":
+        add_student()
+    elif choice == "2":
+        show_students()
+    elif choice == "3":
+        save_to_file()
+    elif choice == "4":
+        print("Goodbye!")
+        break
+    else:
+        print("Invalid option, try again.\n")
