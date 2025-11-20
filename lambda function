@@ -1,0 +1,43 @@
+def add(x, y): 
+    return x + y
+
+def subtract(x, y): 
+    return x - y
+
+def multiply(x, y): 
+    return x * y
+
+def divide(x, y): 
+    return "Undefined (cannot divide by zero)" if y == 0 else x / y
+
+def calculate(x, y, operator):
+    if operator == '+':
+        return add(x, y)
+    elif operator == '-':
+        return subtract(x, y)
+    elif operator == '*':
+        return multiply(x, y)
+    elif operator == '/':
+        return divide(x, y)
+    else:
+        return "Unknown operator"
+
+
+while True:
+    user_input = input("Enter two numbers (space-separated): ")
+
+    try:
+        a, b = [float(n) for n in user_input.split()]
+    except:
+        print("Please enter EXACTLY two valid numbers.")
+        continue
+
+    op = input("Choose operator (+, -, *, /): ")
+
+    result = calculate(a, b, op)
+    print(f"Result: {a} {op} {b} = {result}")
+
+    again = input("Do you want to calculate again? (yes/no): ").lower()
+    if again != "yes":
+        print("Goodbye!")
+        break
