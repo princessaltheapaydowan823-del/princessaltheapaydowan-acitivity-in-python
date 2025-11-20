@@ -1,0 +1,23 @@
+# ---------- 1. FOOD LIST ----------
+def update_food_list():
+    foods = ["Carbonara", "Caldereta", "Spaghetti", "Pansit", "Beef Steak"]
+
+    add_item = input("Enter food to add: ")
+    foods += [add_item]   # different syntax for append
+    print(foods)
+
+    remove_item = input("Enter food to remove: ")
+    foods = [f for f in foods if f != remove_item]   # remove using list comprehension
+    print(foods)
+
+# ---------- 2. TUPLE OF CARS ----------
+def show_cars():
+    cars = tuple(["Honda", "Mitsubishi", "Nissan", "Ford", "Suzuki"])  # tuple() syntax
+    print(cars)
+    print(f"2nd car: {cars[1]}")
+    print(f"Last car: {cars[-1]}")
+    print(cars)
+
+# ---------- 3. SET OF HOBBIES ----------
+def show_hobbies():
+    physica
