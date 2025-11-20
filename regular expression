@@ -1,0 +1,11 @@
+import re
+
+text = "Call me at 0928-987-6543 tomorrow."
+pattern = r"\d{4}-\d{3}-\d{4}"
+
+matches = re.findall(pattern, text)
+
+if matches:
+    print("Phone number found:", matches[0])
+else:
+    print("No phone nu
