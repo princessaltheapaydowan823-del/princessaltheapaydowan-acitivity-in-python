@@ -1,0 +1,10 @@
+def calculate(x, y):
+    print("Addition:", x + y)
+    print("Subtraction:", x - y)
+    print("Multiplication:", x * y)
+    print("Division:", x / y if y != 0 else "Undefined (cannot divide by zero)")
+
+a = float(input("Enter first number: "))
+b = float(input("Enter second number: "))
+
+calculate(a, b)
