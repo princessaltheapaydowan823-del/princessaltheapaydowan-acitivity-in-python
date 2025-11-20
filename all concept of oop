@@ -1,0 +1,15 @@
+import re
+
+def extract_phone(text):
+    # Regex pattern for phone numbers
+    pattern = r"\d{4}-\d{3}-\d{4}"
+    match = re.search(pattern, text)
+    return match.group() if match else None
+
+sentence = "Call me at 0928-987-6543 tomorrow."
+phone_number = extract_phone(sentence)
+
+if phone_number:
+    print("Phone number found:", phone_number)
+else:
+    print("No phone number in the text.")
